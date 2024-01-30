@@ -9,7 +9,7 @@ import getpass
 user = []
 
 def play():
-	print("\n==========QUIZ START==========")
+	print("\n==========QUIZZ START==========")
 	score = 0
 	with open("assets/questions.json", 'r+') as f:
 		j = json.load(f)
