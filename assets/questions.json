@@ -245,8 +245,24 @@
       "answer": "B. Pneumatic rubber tire"
     },
     {
+      "question": "What is the capital of Spain??",
+      "options": ["A. Lisbon", "B. Barcelona", "C. Seville", "D. Madrid"],
+      "answer": "D. Madrid"
+    },
+    {
+      "question": "Who wrote the novel 'War and Peace'?",
+      "options": ["A. Fyodor Dostoevsky", "B. Victor Hugo", "C. Leo Tolstoy", "D. Gustave Flaubert"],
+      "answer": "C. Leo Tolstoy"
+    },
+    {
+      "question": "What is the largest ocean in the world?",
+      "options": ["A. Atlantic Ocean", "B. Arctic Ocean", "C. Indian Ocean", "D. Pacific Ocean"],
+      "answer": "D. Pacific Ocean"
+    },
+    {
       "question": "Who built this project ?",
       "options": ["David", "Nathan", "Sam", "Lisa"],
       "answer": "David"
     }
   ]
+  
