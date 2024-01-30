@@ -28,7 +28,28 @@ def play():
 			del j[ch]
 		print(f'\nFINAL SCORE: {score}')
 
-
+def quizQuestions():
+	if len(user) == 0:
+		print("You must first login before adding questions.")
+	elif len(user) == 2:
+		if user[1] == "ADMIN":
+			print('\n==========ADD QUESTIONS==========\n')
+			ques = input("Enter the question that you want to add:\n")
+			opt = []
+			print("Enter the 4 options with character initials (A, B, C, D)")
+			for _ in range(4):
+				opt.append(input())
+			ans = input("Enter the answer:\n")
+			with open("assets/questions.json", 'r+') as f:
+				questions = json.load(f)
+				dic = {"question": ques, "options": opt, "answer": ans}
+				questions.append(dic)
+				f.seek(0)
+				json.dump(questions, f)
+				f.truncate()
+				print("Question successfully added.")		
+		else:
+			print("You don't have access to adding questions. Only admins are allowed to add questions.")
 
 def createAccount():
 	print("\n==========CREATE ACCOUNT==========")
