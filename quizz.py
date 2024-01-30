@@ -28,44 +28,18 @@ def play():
 			del j[ch]
 		print(f'\nFINAL SCORE: {score}')
 
-def quizQuestions():
-	if len(user) == 0:
-		print("You must first login before adding questions.")
-	elif len(user) == 2:
-		if user[1] == "ADMIN":
-			print('\n==========ADD QUESTIONS==========\n')
-			ques = input("Enter the question that you want to add:\n")
-			opt = []
-			print("Enter the 4 options with character initials (A, B, C, D)")
-			for _ in range(4):
-				opt.append(input())
-			ans = input("Enter the answer:\n")
-			with open("assets/questions.json", 'r+') as f:
-				questions = json.load(f)
-				dic = {"question": ques, "options": opt, "answer": ans}
-				questions.append(dic)
-				f.seek(0)
-				json.dump(questions, f)
-				f.truncate()
-				print("Question successfully added.")		
-		else:
-			print("You don't have access to adding questions. Only admins are allowed to add questions.")
+
 
 def createAccount():
 	print("\n==========CREATE ACCOUNT==========")
 	username = input("Enter your USERNAME: ")
 	password = getpass.getpass(prompt= 'Enter your PASSWORD: ') # The getpass() function is used to prompt to users using the string prompt and reads the input from the user as Password.
-	age = input("Enter your AGE: ")
 	with open('assets/user_accounts.json', 'r+') as user_accounts: #The r+ mode is used to open a file for both reading and writing
 		users = json.load(user_accounts)
 		if username in users.keys():
 			print("An account of this Username already exists.\nPlease enter the login panel.")
 		else:
-			users[username] = {
-                'password': password,
-                'role': 'PLAYER',
-                'age': age
-            }
+			users[username] = [password, "PLAYER"]
 			user_accounts.seek(0) # seek() function is used to change the position of the File Handle to a given specific position. 0 = beginnning
 			json.dump(users, user_accounts) #dumps convert python objects of the all types such int,float,list,tuple,dictionary into JSON strings:
 			user_accounts.truncate() # Python file method truncate() truncates the file's size.
