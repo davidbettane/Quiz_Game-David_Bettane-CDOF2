@@ -1,1 +1,1 @@
-{"David": ["David", "ADMIN"], "david": ["1234", "PLAYER"], "4567": ["4567", "PLAYER"], "7890": ["7890", "PLAYER"], "Rose": ["password", "ADMIN"]}
+{"David": ["David", "ADMIN"], "david": ["1234", "PLAYER"], "4567": ["4567", "PLAYER"], "7890": ["7890", "PLAYER"], "Rose": ["password", "ADMIN"], "sbien": {"password": "password", "role": "PLAYER", "age": "18"}}
